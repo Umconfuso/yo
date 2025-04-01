@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Agência de Fotografia [Nome da Agência]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#1a1a1a',
+              secondary: '#f0f0f0',
+              accent: '#007bff',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-white text-primary">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">[Nome da Agência]</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html#services" class="text-gray-600 hover:text-accent transition duration-300">Serviços</a>
+                <a href="pages/portfolio.html" class="text-gray-600 hover:text-accent transition duration-300">Portfólio</a>
+                <a href="pages/about.html" class="text-gray-600 hover:text-accent transition duration-300">Sobre Nós</a>
+                <a href="pages/contact.html" class="text-gray-600 hover:text-accent transition duration-300">Contacto</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <span class="lucide text-2xl">&#xe9a7;</span> </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 absolute w-full shadow-lg">
+             <a href="index.html#services" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Serviços</a>
+             <a href="pages/portfolio.html" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Portfólio</a>
+             <a href="pages/about.html" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Sobre Nós</a>
+             <a href="pages/contact.html" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="carousel-section" class="relative h-[70vh] md:h-[85vh] w-full overflow-hidden">
+            <div class="swiper h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide relative text-white text-center flex items-center justify-center">
+                         <img src="FOTOS/natal1-.jpg" alt="[Imagem do carrossel 1]" class="absolute inset-0 w-full h-full object-cover -z-10 opacity-80" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/cccccc/333333?text=Erro+Imagem+1';">
+                         <div class=" p-6 rounded-lg max-w-2xl">
+                             <h2 class="text-3xl md:text-5xl font-bold mb-3">Momentos Inesquecíveis</h2>
+                             <p class="text-lg md:text-xl mb-6">Capturamos a magia dos seus eventos.</p>
+                             <a href="pages/portfolio.html" class="bg-accent text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Ver Trabalhos</a>
+                         </div>
+                    </div>
+                    <div class="swiper-slide relative text-white text-center flex items-center justify-center">
+                         <img src="FOTOS/RC7A5197.jpg" alt="[Imagem do carrossel 2]" class="absolute inset-0 w-full h-full object-cover -z-10 opacity-80" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/cccccc/333333?text=Erro+Imagem+2';">
+                         <div class=" p-6 rounded-lg max-w-2xl">
+                             <h2 class="text-3xl md:text-5xl font-bold mb-3">Retratos Autênticos</h2>
+                             <p class="text-lg md:text-xl mb-6">Sessões personalizadas que revelam a sua essência.</p>
+                              <a href="pages/contact.html" class="bg-accent text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Agendar Sessão</a>
+                         </div>
+                    </div>
+                    <div class="swiper-slide relative text-white text-center flex items-center justify-center">
+                         <img src="FOTOS/05_04_2025_Ricardo7841 (1).jpg" alt="[Imagem do carrossel 3]" class="absolute inset-0 w-full h-full object-cover -z-10 opacity-80" onerror="this.onerror=null; this.src='FOTOS/05_04_2025_Ricardo7841 (1).jpg'">
+                         <div class=" p-6 rounded-lg max-w-2xl">
+                             <h2 class="text-3xl md:text-5xl font-bold mb-3">Fotografia Comercial Impactante</h2>
+                             <p class="text-lg md:text-xl mb-6">Imagens que valorizam o seu negócio.</p>
+                              <a href="pages/portfolio.html" class="bg-accent text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Ver Projetos</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-24 bg-secondary">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Os Nossos Serviços</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 mb-12">Oferecemos uma gama completa de serviços de fotografia para atender às suas necessidades.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <span class="lucide text-4xl text-accent mb-4 inline-block">&#xe91f;</span> <h3 class="text-xl font-bold mb-2 text-primary">Fotografia de Eventos</h3>
+                        <p class="text-gray-600">Cobertura completa de casamentos, festas, conferências e outros eventos especiais.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                         <span class="lucide text-4xl text-accent mb-4 inline-block">&#xea6a;</span> <h3 class="text-xl font-bold mb-2 text-primary">Retratos</h3>
+                        <p class="text-gray-600">Sessões de retrato individuais, familiares ou corporativos, em estúdio ou exterior.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                         <span class="lucide text-4xl text-accent mb-4 inline-block">&#xe917;</span> <h3 class="text-xl font-bold mb-2 text-primary">Fotografia Comercial</h3>
+                        <p class="text-gray-600">Fotografia de produtos, imóveis, publicidade e conteúdo para marcas.</p>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                     <a href="pages/contact.html" class="bg-primary text-white py-3 px-8 rounded-lg font-semibold hover:bg-gray-700 transition duration-300 text-lg">Peça um Orçamento</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-secondary py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="current-year"></span> [Nome da Agência]. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="carousel.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

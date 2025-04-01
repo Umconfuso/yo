@@ -1,0 +1,37 @@
+/* Importação da Fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Definição da Fonte Lucide Icons */
+@font-face {
+  font-family: 'LucideIcons';
+  src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+}
+
+/* Classe utilitária para usar os ícones Lucide */
+.lucide {
+  font-family: 'LucideIcons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Aplica a fonte base e anti-aliasing ao corpo */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos adicionais para o Swiper (Carrossel) se necessário */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff; /* Cor das setas (accent color) */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #007bff; /* Cor da paginação ativa */
+}

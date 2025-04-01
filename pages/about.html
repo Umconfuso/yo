@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Agência de Fotografia [Nome da Agência]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#1a1a1a',
+              secondary: '#f0f0f0',
+              accent: '#007bff',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-white text-primary">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <a href="../index.html" class="text-2xl font-bold text-primary">[Nome da Agência]</a>
+            <div class="hidden md:flex space-x-6">
+                 <a href="../index.html#services" class="text-gray-600 hover:text-accent transition duration-300">Serviços</a>
+                <a href="portfolio.html" class="text-gray-600 hover:text-accent transition duration-300">Portfólio</a>
+                <a href="about.html" class="text-accent font-semibold transition duration-300">Sobre Nós</a>
+                <a href="contact.html" class="text-gray-600 hover:text-accent transition duration-300">Contacto</a>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <span class="lucide text-2xl">&#xe9a7;</span> </button>
+        </nav>
+         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 absolute w-full shadow-lg">
+             <a href="../index.html#services" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Serviços</a>
+             <a href="portfolio.html" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Portfólio</a>
+             <a href="about.html" class="block px-6 py-2 text-accent bg-secondary font-semibold">Sobre Nós</a> <a href="contact.html" class="block px-6 py-2 text-gray-600 hover:bg-secondary hover:text-accent">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+         <section id="about" class="py-16 md:py-24 bg-secondary">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                     <img src="https://placehold.co/600x450/dddddd/666666?text=A+Nossa+Equipa"
+                          alt="[Imagem sobre a agência ou equipa]"
+                          class="rounded-lg shadow-lg w-full"
+                          onerror="this.onerror=null; this.src='https://placehold.co/600x450/dddddd/666666?text=Erro';">
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Sobre [Nome da Agência]</h1>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Somos uma equipa apaixonada por fotografia, dedicada a capturar a essência de cada momento. Com anos de experiência e um olhar artístico, transformamos visões em imagens inesquecíveis.</p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">O nosso compromisso é com a qualidade, profissionalismo e a satisfação total dos nossos clientes. Trabalhamos de perto consigo para entender as suas necessidades e superar as suas expectativas.</p>
+                    <p class="text-gray-600 leading-relaxed">Acreditamos que cada fotografia conta uma história e estamos aqui para ajudar a contar a sua da forma mais bela e autêntica possível.</p>
+                     <a href="contact.html" class="mt-6 inline-block bg-accent text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Fale Connosco</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-secondary py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="current-year"></span> [Nome da Agência]. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+
+</body>
+</html>
