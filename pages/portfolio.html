@@ -24,43 +24,64 @@
       }
     </script>
     <style>
-        /* Estilos adicionais para o modal */
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.75); /* Fundo semi-transparente */
+        /* Estilos para a galeria imersiva */
+        #portfolio-gallery-overlay {
+            background-color: rgba(0, 0, 0, 0.95); /* Fundo quase opaco */
         }
-        /* Ajustar cor das setas e paginação do Swiper no Modal */
-        #portfolio-modal .swiper-button-next,
-        #portfolio-modal .swiper-button-prev {
-            color: #ffffff; /* Setas brancas para melhor contraste */
-            background-color: rgba(0, 0, 0, 0.3);
+
+        /* Ajustar cor das setas e paginação do Swiper na Galeria */
+        #portfolio-gallery-overlay .swiper-button-next,
+        #portfolio-gallery-overlay .swiper-button-prev {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            width: 44px;
-            height: 44px;
+            width: 48px; /* Um pouco maior */
+            height: 48px;
             transition: background-color 0.3s ease;
+            margin-top: -24px; /* Centralizar verticalmente */
         }
-         #portfolio-modal .swiper-button-next:hover,
-         #portfolio-modal .swiper-button-prev:hover {
-             background-color: rgba(0, 0, 0, 0.5);
+         #portfolio-gallery-overlay .swiper-button-next:hover,
+         #portfolio-gallery-overlay .swiper-button-prev:hover {
+             background-color: rgba(255, 255, 255, 0.2);
          }
 
-        #portfolio-modal .swiper-button-next::after,
-        #portfolio-modal .swiper-button-prev::after {
-            font-size: 1.2rem; /* Tamanho dos ícones das setas */
+        #portfolio-gallery-overlay .swiper-button-next::after,
+        #portfolio-gallery-overlay .swiper-button-prev::after {
+            font-size: 1.5rem;
         }
 
-        #portfolio-modal .swiper-pagination-bullet {
-            background-color: rgba(255, 255, 255, 0.5); /* Bullets da paginação */
+        #portfolio-gallery-overlay .swiper-pagination-bullet {
+            background-color: rgba(255, 255, 255, 0.4);
             opacity: 1;
+            width: 10px; /* Bullets maiores */
+            height: 10px;
+            transition: background-color 0.3s ease;
         }
 
-        #portfolio-modal .swiper-pagination-bullet-active {
-            background-color: #ffffff; /* Bullet ativo */
+        #portfolio-gallery-overlay .swiper-pagination-bullet-active {
+            background-color: #ffffff;
         }
+
+        /* Estilo para o título na galeria */
+        #gallery-project-title {
+             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Estilo para o botão de fechar */
+        #close-gallery-button {
+             background-color: rgba(0, 0, 0, 0.4);
+             transition: background-color 0.3s ease;
+        }
+         #close-gallery-button:hover {
+             background-color: rgba(0, 0, 0, 0.6);
+         }
+
     </style>
 </head>
 <body class="bg-white text-primary">
 
-    <header class="sticky top-0 z-40 bg-white shadow-md"> <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="../index.html" class="text-2xl font-bold text-primary">[Nome da Agência]</a>
             <div class="hidden md:flex space-x-6">
                 <a href="../index.html#services" class="text-gray-600 hover:text-accent transition duration-300">Serviços</a>
@@ -86,18 +107,17 @@
                 <h1 class="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">Os Nossos Projetos</h1>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-
                     <div class="project-item group bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                         data-project-title="Editorial Healsi"
+                         data-project-title="Casamento Ana & Rui"
                          data-project-images='[
-                            "https://placehold.co/1200x800/a0a0a0/ffffff?text=1",
-                            "https://placehold.co/1200x800/b0b0b0/ffffff?text=2",
-                            "https://placehold.co/1200x800/c0c0c0/ffffff?text=3",
-                            "https://placehold.co/1200x800/d0d0d0/ffffff?text=4"
+                            "https://placehold.co/1200x800/a0a0a0/ffffff?text=Casamento+Ana+&+Rui+1",
+                            "https://placehold.co/1200x800/b0b0b0/ffffff?text=Casamento+Ana+&+Rui+2",
+                            "https://placehold.co/1200x800/c0c0c0/ffffff?text=Casamento+Ana+&+Rui+3",
+                            "https://placehold.co/1200x800/d0d0d0/ffffff?text=Casamento+Ana+&+Rui+4"
                          ]'>
                         <div class="relative aspect-video">
-                             <img src="https://placehold.co/600x400/a0a0a0/ffffff?text=fotos"
-                                 alt="Capa do projeto Casamento Ana & Rui"
+                             <img src="https://placehold.co/600x400/a0a0a0/ffffff?text=Capa:+Casamento+Ana+&+Rui"
+                                 alt="[Imagem de Capa do projeto Casamento Ana & Rui]"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/555555?text=Erro';">
                              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -105,25 +125,21 @@
                              </div>
                         </div>
                         <div class="p-4 bg-white">
-                            <h2 class="text-xl font-semibold text-primary">Editorial Healsi</h2>
-                            <p class="text-sm text-gray-500">Healsi</p>
+                            <h2 class="text-xl font-semibold text-primary">Casamento Ana & Rui</h2>
+                            <p class="text-sm text-gray-500">Fotografia de Casamento</p>
                         </div>
                     </div>
 
-
-
-
                     <div class="project-item group bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                         data-project-title="fotografia producto - condado"
+                         data-project-title="Sessão de Retrato - Sofia"
                          data-project-images='[
-                         "../FOTOS/311A4643.jpg",
-                         "https://placehold.co/1200x800/b0b0b0/ffffff?text=2",
-                         "https://placehold.co/1200x800/c0c0c0/ffffff?text=3",
-                         "https://placehold.co/1200x800/d0d0d0/ffffff?text=4"
+                            "https://placehold.co/1000x1000/99aabb/ffffff?text=Retrato+Sofia+1",
+                            "https://placehold.co/1000x1000/aaccee/ffffff?text=Retrato+Sofia+2",
+                            "https://placehold.co/1000x1000/bbddff/ffffff?text=Retrato+Sofia+3"
                          ]'>
                         <div class="relative aspect-video">
-                             <img src="../FOTOS/311A4643.jpg"
-                                 alt="Capa do projeto Sessão de Retrato - Sofia"
+                             <img src="https://placehold.co/600x400/99aabb/ffffff?text=Capa:+Retrato+Sofia"
+                                 alt="[Imagem de Capa do projeto Sessão de Retrato - Sofia]"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/555555?text=Erro';">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -131,22 +147,20 @@
                              </div>
                         </div>
                          <div class="p-4 bg-white">
-                            <h2 class="text-xl font-semibold text-primary">Sessão de producto - Condado</h2>
-                            <p class="text-sm text-gray-500">Producto</p>
+                            <h2 class="text-xl font-semibold text-primary">Sessão de Retrato - Sofia</h2>
+                            <p class="text-sm text-gray-500">Retratos Individuais</p>
                         </div>
                     </div>
 
-
-
                      <div class="project-item group bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                         data-project-title="Produto XPTO - 5"
+                         data-project-title="Produto XPTO - Campanha"
                          data-project-images='[
-                            "https://placehold.co/1200x900/eec9c9/333333?text=1",
-                            "https://placehold.co/1200x900/ffdada/333333?text=2"
+                            "https://placehold.co/1200x900/eec9c9/333333?text=Produto+XPTO+1",
+                            "https://placehold.co/1200x900/ffdada/333333?text=Produto+XPTO+2"
                          ]'>
                          <div class="relative aspect-video">
                              <img src="https://placehold.co/600x400/eec9c9/333333?text=Capa:+Produto+XPTO"
-                                 alt="Capa do projeto Produto XPTO - Campanha"
+                                 alt="[Imagem de Capa do projeto Produto XPTO - Campanha]"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/555555?text=Erro';">
                              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -154,31 +168,26 @@
                              </div>
                          </div>
                          <div class="p-4 bg-white">
-                            <h2 class="text-xl font-semibold text-primary">Produto XPTO- 5</h2>
+                            <h2 class="text-xl font-semibold text-primary">Produto XPTO - Campanha</h2>
                             <p class="text-sm text-gray-500">Fotografia de Produto</p>
                         </div>
                     </div>
-
-                     </div>
+                    </div>
             </div>
         </section>
     </main>
 
-    <div id="portfolio-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-overlay">
-        <div class="relative bg-white/10 backdrop-blur-sm rounded-lg w-full max-w-5xl max-h-[95vh] flex flex-col p-2 md:p-4 shadow-2xl">
-             <button id="close-modal-button" class="absolute top-2 right-2 md:top-4 md:right-4 z-10 text-white bg-black/40 rounded-full p-1 hover:bg-black/60 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
+    <div id="portfolio-gallery-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300 ease-out">
+        <button id="close-gallery-button" class="absolute top-5 right-5 z-10 text-white rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
 
-             <h2 id="modal-project-title" class="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 px-4 text-center truncate"></h2>
+        <h2 id="gallery-project-title" class="absolute bottom-5 left-5 z-10 text-lg md:text-xl font-semibold text-white max-w-[calc(100%-80px)] truncate"></h2>
 
-            <div class="swiper flex-grow h-full w-full overflow-hidden rounded-md">
-                <div class="swiper-wrapper">
-                    </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+        <div class="swiper w-full h-full">
+            <div class="swiper-wrapper">
+                </div>
+            <div class="swiper-pagination !bottom-5"></div> <div class="swiper-button-prev !left-5"></div> <div class="swiper-button-next !right-5"></div>
         </div>
     </div>
 
@@ -191,7 +200,5 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../main.js"></script>
-    <script src="../portfolio.js"></script>
-
-</body>
+    <script src="../portfolio.js"></script> </body>
 </html>
